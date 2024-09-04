@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="loader.css" />
+  </head>
+  <body class="bg-[--background-color] flex flex-col items-center justify-start text-sm md:text-base">
+    <img src="image/player-1.svg" alt="" class="hidden">
+    <img src="image/player-2.svg" alt="" class="hidden">
+    <div id="loading" class="absolute flex justify-center items-center w-[95%] md:w-[85%] lg:w-[45%] h-[100svh] z-10 bg-[--background-color]">
+      <div class="loader"></div>
+    </div>
+    <header id="header" class="w-[95%] md:w-[85%] lg:w-[45%] h-[10svh] flex items-center justify-between">
+      <nav id="header-btns" class="w-[25%] md:w-[13%] flex items-center justify-between invisible">
+        <img src="image/home.svg" onclick="home()" id="header-home-btn" alt="" class="w-[40%] bg-[--theme-color] rounded hover:cursor-pointer" />
+        <img src="image/again.svg" onclick="again()" id="header-again-btn" alt="" class="w-[40%] bg-[--theme-color] rounded hover:cursor-pointer" />
+      </nav>
+      <div class="text-2xl md:text-4xl block font-[sans-serif] font-bold float-left">
+        <span>DOOZ</span>
+        <span class="bg-[--theme-color] text-black rounded p-[0_0.5vw_0vw_0.5vw] inline-block">IR</span>
+      </div>
+    </header>
+    <main id="container" class="w-[95%] md:w-[70%] lg:w-[30%] h-[90svh] flex flex-col items-center justify-start">
+      <aside id="page-1" class="w-[100%] h-[100%] flex flex-col items-center justify-center">
+        <div id="form" class="w-[100%] h-[40%] gap-[10%] flex flex-col items-center justify-center">
+          <div id="input-1-div" class="w-[100%] h-[20%] flex flex-col relative">
+            <input id="player-1-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[2px] border-solid border-[--player-1-color]" />
+            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-1-color] px-[5px] rounded">player 1</span>
+          </div>
+          <div id="input-2-div" class="w-[100%] h-[20%] flex flex-col relative">
+            <input id="player-2-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[2px] border-solid border-[--player-2-color]" />
+            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-2-color] px-[5px] rounded">player 2</span>
+          </div>
+        </div>
+        <div id="start-btn" onclick="start()" class="btn !h-[7%] !w-[25%] bg-[--btn-color] hover:cursor-pointer">start</div>
+      </aside>
+      <aside id="page-2" class="w-[100%] h-[100%] gap-[5%] hidden flex-col items-center justify-center">
+        <div id="score-board" class="w-[100%] h-[10%] flex">
+          <div id="player-1" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
+            <p id="player-1-name">mohamad</p>
+            <p id="player-1-score">0</p>
+            <div id="player-1-underline" class="w-[100%] h-[5px] bg-[--player-1-color] invisible"></div>
+          </div>
+          <span class="flex-[1_0_0] flex justify-center">vs</span>
+          <div id="player-2" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
+            <p id="player-2-name">javad</p>
+            <p id="player-2-score">0</p>
+            <div id="player-2-underline" class="w-[100%] h-[5px] bg-[--player-2-color] invisible"></div>
+          </div>
+        </div>
+        <div id="box" class="w-[100%] gap-[5px] p-[5px] aspect-square bg-[--theme-color] grid grid-cols-3 grid-rows-3">
+          <button type="button" id="dooz-btns" value="1" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="2" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="3" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="4" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="5" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="6" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="7" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="8" class="bg-[--background-color]"></button>
+          <button type="button" id="dooz-btns" value="9" class="bg-[--background-color]"></button>
+        </div>
+      </aside>
+      <aside id="page-3" class="w-[100%] h-[100%] gap-[10%] hidden flex-col items-center justify-center">
+        <div id="score-board" class="w-[100%] h-[15%] flex">
+          <div id="player-1" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
+            <div id="player-1-win" class="mb-auto w-[100%] h-[30%] flex justify-center items-center rounded shadow-[0px_0px_5px_0px_#FF9900] invisible">winner</div>
+            <p id="player-1-name" class="h-[30%]">mohamad</p>
+            <p id="player-1-score" class="h-[30%]">0</p>
+          </div>
+          <span class="flex-[1_0_0] flex justify-center items-center">vs</span>
+          <div id="player-2" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
+            <div id="player-2-win" class="mb-auto w-[100%] h-[30%] flex justify-center items-center rounded shadow-[0px_0px_5px_0px_#FF9900] invisible">winner</div>
+            <p id="player-2-name" class="h-[30%]">mohamad</p>
+            <p id="player-2-score" class="h-[30%]">0</p>
+          </div>
+        </div>
+        <div id="page-3-btns" class="w-[100%] flex justify-around">
+          <img src="image/again.svg" onclick="again()" alt="" class="w-[10%] bg-[--theme-color] rounded hover:cursor-pointer" />
+          <img src="image/home.svg" onclick="home()" alt="" class="w-[10%] bg-[--theme-color] rounded hover:cursor-pointer" />
+          <img src="image/continue.svg" onclick="pass()" alt="" class="w-[10%] bg-[--theme-color] rounded hover:cursor-pointer" />
+        </div>
+      </aside>
+    </main>
+  </body>
+  <script src="js.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        document.querySelector("#loading").classList.add("hidden");
+      }, 1500);
+    });
+  </script>
+</html>
