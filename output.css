@@ -925,6 +925,10 @@ video {
   border-width: 0.2rem;
 }
 
+.focus\:border-\[9\.2rem\]:focus {
+  border-width: 9.2rem;
+}
+
 .peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:left-1\/2 {
   left: 50%;
 }
