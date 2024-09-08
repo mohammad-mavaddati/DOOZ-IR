@@ -27,12 +27,12 @@
       <aside id="page-1" class="w-[100%] h-[100%] flex flex-col items-center justify-center">
         <div id="form" class="w-[100%] h-[40%] gap-[10%] flex flex-col items-center justify-center">
           <div id="input-1-div" class="w-[100%] h-[20%] flex flex-col relative">
-            <input id="player-1-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[2px] border-solid border-[--player-1-color] bg-white text-black" />
-            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-1-color] px-[5px] rounded">player 1</span>
+            <input id="player-1-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[0.2rem] border-solid border-[--player-1-color] bg-white text-black" />
+            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-1-color] px-[0.3rem] rounded">player 1</span>
           </div>
           <div id="input-2-div" class="w-[100%] h-[20%] flex flex-col relative">
-            <input id="player-2-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[2px] border-solid border-[--player-2-color] bg-white text-black" />
-            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-2-color] px-[5px] rounded">player 2</span>
+            <input id="player-2-input" type="text" placeholder=" " class="w-[100%] h-[100%] peer rounded text-center focus:border-[0.2rem] border-solid border-[--player-2-color] bg-white text-black" />
+            <span class="absolute -translate-y-1/2 -translate-x-1/2 left-[2.5rem] top-0 peer-placeholder-shown:left-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent bg-black transition-all peer-placeholder-shown:text-black text-[--player-2-color] px-[0.3rem] rounded">player 2</span>
           </div>
         </div>
         <div id="start-btn" onclick="start()" class="btn !h-[7%] !w-[25%] bg-[--btn-color] hover:cursor-pointer">start</div>
@@ -42,16 +42,16 @@
           <div id="player-1" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
             <p id="player-1-name">mohamad</p>
             <p id="player-1-score">0</p>
-            <div id="player-1-underline" class="w-[100%] h-[5px] bg-[--player-1-color] invisible"></div>
+            <div id="player-1-underline" class="w-[100%] h-[0.2rem] bg-[--player-1-color] invisible"></div>
           </div>
           <span class="flex-[1_0_0] flex justify-center">vs</span>
           <div id="player-2" class="h-[100%] flex-[1_0_0] flex flex-col items-center">
             <p id="player-2-name">javad</p>
             <p id="player-2-score">0</p>
-            <div id="player-2-underline" class="w-[100%] h-[5px] bg-[--player-2-color] invisible"></div>
+            <div id="player-2-underline" class="w-[100%] h-[0.2rem] bg-[--player-2-color] invisible"></div>
           </div>
         </div>
-        <div id="box" class="w-[100%] gap-[5px] p-[5px] aspect-square bg-[--theme-color] grid grid-cols-3 grid-rows-3">
+        <div id="box" class="w-[100%] gap-[0.3rem] p-[0.3rem] aspect-square bg-[--theme-color] grid grid-cols-3 grid-rows-3">
           <button type="button" id="dooz-btns" value="1" class="bg-[--background-color]"></button>
           <button type="button" id="dooz-btns" value="2" class="bg-[--background-color]"></button>
           <button type="button" id="dooz-btns" value="3" class="bg-[--background-color]"></button>
