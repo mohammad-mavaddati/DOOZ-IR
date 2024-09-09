@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply rounded flex justify-center items-center;
+}
+
+* {
+  @apply text-white outline-none border-none;
+}
+
+:root {
+  --player-1-color: #ff6666;
+  --player-2-color: #34d188;
+  --btn-color: var(--theme-color);
+  --theme-color: #03a9f5;
+  --dooz-border-color: #413932;
+  --dooz-bg-color: var(--background-color);
+  --background-color: rgb(20, 20, 20);
+}
+
+.active-player-2 #player-2-underline {
+  visibility: visible;
+}
+.active-player-1 #player-1-underline {
+  visibility: visible;
+}
+.win-player-2 #player-2-win {
+  visibility: visible;
+}
+.win-player-1 #player-1-win {
+  visibility: visible;
+}
