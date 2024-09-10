@@ -224,3 +224,11 @@ function go_page_3() {
   document.getElementById("page-3").classList.remove("hidden");
   document.getElementById("page-3").classList.add("flex");
 }
+
+//روی کیبورد کلیک کند Enter برروی , start-btn بازیکن میتواند بجای کلیک برو روی 
+document.addEventListener("keydown",function(e){
+  if(document.getElementById("page-1").classList.contains("flex") && e.key === "Enter"){
+    start()
+    console.log("game started");
+  }
+})
