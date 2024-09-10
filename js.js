@@ -229,6 +229,11 @@ function go_page_3() {
 document.addEventListener("keydown",function(e){
   if(document.getElementById("page-1").classList.contains("flex") && e.key === "Enter"){
     start()
-    console.log("game started");
+  }
+})
+//روی کیبورد کلیک کند Esc برروی , home-btn بازیکن میتواند بجای کلیک برو روی 
+document.addEventListener("keydown",function(e){
+  if(document.getElementById("page-3").classList.contains("flex") || document.getElementById("page-2").classList.contains("flex") && e.key === "Escape"){
+    home()
   }
 })
