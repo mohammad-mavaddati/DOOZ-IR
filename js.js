@@ -1,4 +1,6 @@
 "use strict";
+// در صورتی که بازی مساوی شد خانه ها از نو چیده میشوند
+//تغییر نوبت
 //المان های مربوط به بازیکنان
 const player_1_score = document.querySelectorAll("#player-1-score");
 const player_2_score = document.querySelectorAll("#player-2-score");
@@ -64,7 +66,6 @@ function start() {
         if (check_winner()) {
           //غیر فعال کردن دکمه های هدر
           header_btn.classList.add("invisible");
-
           //برو به صفحه سوم
           go_page_3();
           //اضافه کردن افکت بازیکن برنده
@@ -73,14 +74,11 @@ function start() {
           for (let i of turn[1]) {
             i.textContent = Number(i.textContent) + 1;
           }
+        } else if (player_1_list.length + player_2_list.length === 9) {
+          pass();
         } else {
-          //تغییر نوبت
           switch_turn();
         }
-	// در صورتی که بازی مساوی شد خانه ها از نو چیده میشوند
-	if (player_1_list.length + player_2_list.length === 9){
-	  pass();
-	}
       }
     });
   }
@@ -147,7 +145,7 @@ function again() {
     i.innerHTML = "";
   }
 
-  //حذف کردن افکت بازیکن برنده 
+  //حذف کردن افکت بازیکن برنده
   score_board[1].classList.remove(turn[4]);
 
   //تغییر نوبت
@@ -182,7 +180,7 @@ function pass() {
     i.innerHTML = "";
   }
 
-  //حذف کردن افکت بازیکن برنده 
+  //حذف کردن افکت بازیکن برنده
   score_board[1].classList.remove(turn[4]);
 
   //تغییر نوبت
@@ -225,15 +223,15 @@ function go_page_3() {
   document.getElementById("page-3").classList.add("flex");
 }
 
-//روی کیبورد کلیک کند Enter برروی , start-btn بازیکن میتواند بجای کلیک برو روی 
-document.addEventListener("keydown",function(e){
-  if(document.getElementById("page-1").classList.contains("flex") && e.key === "Enter"){
-    start()
+//روی کیبورد کلیک کند Enter برروی , start-btn بازیکن میتواند بجای کلیک برو روی
+document.addEventListener("keydown", function (e) {
+  if (document.getElementById("page-1").classList.contains("flex") && e.key === "Enter") {
+    start();
   }
-})
-//روی کیبورد کلیک کند Esc برروی , home-btn بازیکن میتواند بجای کلیک برو روی 
-document.addEventListener("keydown",function(e){
-  if(document.getElementById("page-3").classList.contains("flex") || document.getElementById("page-2").classList.contains("flex") && e.key === "Escape"){
-    home()
+});
+//روی کیبورد کلیک کند Esc برروی , home-btn بازیکن میتواند بجای کلیک برو روی
+document.addEventListener("keydown", function (e) {
+  if (document.getElementById("page-3").classList.contains("flex") || (document.getElementById("page-2").classList.contains("flex") && e.key === "Escape")) {
+    home();
   }
-})
+});
